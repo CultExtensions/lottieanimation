@@ -87,6 +87,19 @@
         container.innerHTML = '<p>Failed to load lottie-web from CDN.</p>';
         return;
       }
+      function nextFrame() {
+        return new Promise(function (resolve) {
+          requestAnimationFrame(resolve);
+        });
+      }
+      async function waitForNonZeroLayout(el) {
+        // In iframes, layout can be 0×0 for a tick; lottie-web canvas then stays blank.
+        for (var tries = 0; tries < 90; tries++) {
+          var r = el.getBoundingClientRect();
+          if (r.width > 10 && r.height > 10) return;
+          await nextFrame();
+        }
+      }
       try {
         var animUrl = new URL('animation.json', window.location.href).href;
         var res = await fetch(animUrl);
@@ -108,6 +121,7 @@
           a.p = url;
         }
 
+        await waitForNonZeroLayout(container);
         var anim = window.lottie.loadAnimation({
           container: container,
           renderer: 'canvas',
@@ -129,10 +143,28 @@
           for (var c = 0; c < canvases.length; c++) {
             canvases[c].style.backgroundColor = 'transparent';
           }
+          // Resize after paint: fixes intermittent blank frame on first render in some hosts.
+          requestAnimationFrame(function () {
+            try { anim.resize(); } catch (e) {}
+          });
         });
         anim.addEventListener('destroy', function () {
           blobs.forEach(URL.revokeObjectURL);
         });
+
+        if ('ResizeObserver' in window) {
+          var ro = new ResizeObserver(function () {
+            try { anim.resize(); } catch (e) {}
+          });
+          ro.observe(container);
+          anim.addEventListener('destroy', function () {
+            try { ro.disconnect(); } catch (e) {}
+          });
+        } else {
+          window.addEventListener('resize', function () {
+            try { anim.resize(); } catch (e) {}
+          });
+        }
       } catch (err) {
         container.innerHTML = '<p style="padding:12px">Could not load animation: ' + String(err.message || err) + '</p>';
       }
