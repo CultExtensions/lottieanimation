@@ -214,6 +214,18 @@ function dataUrlPng(buf) {
   return `data:image/png;base64,${buf.toString('base64')}`;
 }
 
+/** Higher DPI rasterisation then resize → sharper edges on UI mock text/strokes (lossless PNG). */
+const SVG_RASTER_DENSITY = 144;
+const pngLossless = { compressionLevel: 6, effort: 10 };
+
+async function rasterSvgToComp(svgString) {
+  return sharp(Buffer.from(svgString), { density: SVG_RASTER_DENSITY })
+    .resize(W, H, { fit: 'fill', kernel: sharp.kernel.lanczos3 })
+    .ensureAlpha()
+    .png(pngLossless)
+    .toBuffer();
+}
+
 function rectMask(nm, verts) {
   const z = verts.map(() => [0, 0]);
   return {
@@ -247,24 +259,24 @@ if (!baseSvg.includes('y="354"') || baseSvg.includes('y="317"')) {
   process.exit(1);
 }
 
-const basePng = await sharp(Buffer.from(baseSvg)).ensureAlpha().png().toBuffer();
+const basePng = await rasterSvgToComp(baseSvg);
 
-const row1StringsPng = await sharp(Buffer.from(crowdinRow1StringsSvg)).ensureAlpha().png().toBuffer();
-const row1GreenPng = await sharp(Buffer.from(crowdinRow1GreenSvg)).ensureAlpha().png().toBuffer();
-const rowsRestPng = await sharp(Buffer.from(crowdinRowsRestOverlaySvg)).ensureAlpha().png().toBuffer();
+const row1StringsPng = await rasterSvgToComp(crowdinRow1StringsSvg);
+const row1GreenPng = await rasterSvgToComp(crowdinRow1GreenSvg);
+const rowsRestPng = await rasterSvgToComp(crowdinRowsRestOverlaySvg);
 
-const arrowsFull = await sharp(Buffer.from(arrowsOnlySvg)).ensureAlpha().png().toBuffer();
+const arrowsFull = await rasterSvgToComp(arrowsOnlySvg);
 
 const arrowTopPng = await sharp(arrowsFull)
   .extract(ARROW_TOP_EXTRACT)
   .ensureAlpha()
-  .png()
+  .png(pngLossless)
   .toBuffer();
 
 const arrowBotPng = await sharp(arrowsFull)
   .extract(ARROW_BOT_EXTRACT)
   .ensureAlpha()
-  .png()
+  .png(pngLossless)
   .toBuffer();
 
 const tw = ARROW_TOP_EXTRACT.width;
@@ -277,9 +289,9 @@ const topCy = ARROW_TOP_EXTRACT.top + th / 2;
 const botCx = ARROW_BOT_EXTRACT.left + bw / 2;
 const botCy = ARROW_BOT_EXTRACT.top + bh / 2;
 
-const aeFlyFullPng = await sharp(Buffer.from(aeFlyTextFullSvg)).ensureAlpha().png().toBuffer();
-const aeFlyCnFullPng = await sharp(Buffer.from(aeFlyTextCnFullSvg)).ensureAlpha().png().toBuffer();
-const aeGlowPng = await sharp(Buffer.from(aeTransitionGlowSvg)).ensureAlpha().png().toBuffer();
+const aeFlyFullPng = await rasterSvgToComp(aeFlyTextFullSvg);
+const aeFlyCnFullPng = await rasterSvgToComp(aeFlyTextCnFullSvg);
+const aeGlowPng = await rasterSvgToComp(aeTransitionGlowSvg);
 
 const assets = [
   { id: 'img_base', w: W, h: H, u: '', p: dataUrlPng(basePng), e: 1 },

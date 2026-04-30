@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Copy half-res Lottie (embedded data:image PNGs) into cult-connector-sync-web/.
- * Mirrors the same files into docs/ so GitHub Pages ("Deploy from branch" → /docs) works;
- * GitHub only offers / (root) or /docs — not arbitrary folder names.
+ * Copy full-res Lottie (embedded data:image PNGs) into cult-connector-sync-web/.
+ * Mirrors the same files into docs/ so GitHub Pages ("Deploy from branch" → /docs) works.
  *
- * Removes stale img_*.png sidecars — avoids SVG <image> + external file failures in browsers.
+ * Smaller bundle (~half linear res): run halve-lottie-rasters then:
+ *   node sync-inline-web-lottie.mjs --half
  *
  * For detached PNGs + small JSON (e.g. WordPress), use: npm run build:web:external
  */
@@ -13,23 +13,24 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const dir = dirname(fileURLToPath(import.meta.url));
-const halfPath = join(dir, 'cult-connector-sync-half.json');
+const useHalf = process.argv.includes('--half');
+const srcJsonPath = join(dir, useHalf ? 'cult-connector-sync-half.json' : 'cult-connector-sync.json');
 const outDir = join(dir, 'cult-connector-sync-web');
 const docsDir = join(dir, 'docs');
 const outJson = join(outDir, 'animation.json');
 
-if (!fs.existsSync(halfPath)) {
-  console.error('Missing', halfPath, '- run halve-lottie-rasters first');
+if (!fs.existsSync(srcJsonPath)) {
+  console.error('Missing', srcJsonPath, useHalf ? '- run halve-lottie-rasters first' : '- run build:lottie first');
   process.exit(1);
 }
 fs.mkdirSync(outDir, { recursive: true });
-fs.copyFileSync(halfPath, outJson);
+fs.copyFileSync(srcJsonPath, outJson);
 for (const name of fs.readdirSync(outDir)) {
   if (name.startsWith('img_') && name.endsWith('.png')) {
     fs.unlinkSync(join(outDir, name));
   }
 }
-console.log(`Wrote ${outJson} (embedded assets, ${fs.statSync(outJson).size} bytes)`);
+console.log(`Wrote ${outJson} (${useHalf ? 'half-res' : 'full-res'} embedded assets, ${fs.statSync(outJson).size} bytes)`);
 
 /** GitHub Pages branch deploy only serves /docs or repo root — mirror web preview there. */
 fs.mkdirSync(docsDir, { recursive: true });

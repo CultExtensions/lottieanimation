@@ -101,14 +101,12 @@
     <rect x="888" y="50" width="240" height="24" rx="12" fill="#0F0F13" opacity="0.75" />
     <text x="904" y="68" class="t-ui2" fill="#C9CBD7">Crowdin</text>
 
-    <!-- Files -->
     <rect x="804" y="104" width="174" height="452" rx="14" fill="#0F0F13" stroke="#2B2B33" />
     <rect x="824" y="124" width="134" height="148" rx="12" fill="#1A1A20" stroke="#2B2B33" />
     <rect x="836" y="146" width="14" height="10" rx="2" fill="#61D2B4" opacity="0.85" />
     <text x="856" y="156" class="t-ui-sm" fill="#C9CBD7">After Effects</text>
     <rect x="828" y="166" width="126" height="28" rx="8" fill="#13261E" stroke="#2EA76F" stroke-width="2" />
     <text x="834" y="184" class="t-ui-sm" fill="#E6E7F0">AE X Crowdin</text>
-    <text x="824" y="278" class="t-ui2" fill="#C9CBD7">Files</text>
     <g opacity="0.85">
       <rect x="824" y="290" width="134" height="12" rx="6" fill="#2A2A33" />
       <rect x="824" y="308" width="118" height="12" rx="6" fill="#2A2A33" opacity="0.88" />

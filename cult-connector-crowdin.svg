@@ -42,7 +42,6 @@
     <rect x="316" y="418" width="14" height="10" rx="2" fill="#7B6CF5" opacity="0.55" />
     <text x="336" y="428" class="t-ui-sm" fill="#9CA3AF">Canva</text>
 
-    <text x="292" y="520" class="t-ui2" fill="#C9CBD7">Files</text>
     <g opacity="0.85">
       <rect x="292" y="536" width="276" height="12" rx="6" fill="#2A2A33" />
       <rect x="292" y="556" width="240" height="12" rx="6" fill="#2A2A33" opacity="0.85" />
