@@ -3,16 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Critical for iframe embeds: dark color-scheme makes UAs paint opaque black behind transparent PNG/canvas gaps -->
+  <meta name="color-scheme" content="light" />
   <title>Cult Connector Sync</title>
   <style>
     /**
-     * Transparent chrome so iframe embeds show only the animation (parent page shows through).
+     * Transparent chrome so parent page shows through SVG/lottie alpha (mock has transparent gutters).
      */
     html {
-      background: transparent;
+      background-color: transparent !important;
+      background-image: none !important;
     }
     :root {
-      color-scheme: dark light;
       --meta-fg: #6b7280;
     }
     body {
@@ -20,28 +22,32 @@
       min-height: 100vh;
       display: grid;
       place-items: center;
-      background: transparent;
+      background-color: transparent !important;
+      background-image: none !important;
       color: var(--meta-fg);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
     main {
       padding: 16px;
       width: min(100vw - 32px, calc(1380px + 24px));
-      background: transparent;
+      background-color: transparent !important;
+      background-image: none !important;
     }
     #lottie {
       width: 100%;
       aspect-ratio: 1380 / 620;
       border-radius: 12px;
       overflow: hidden;
-      background: transparent;
+      background-color: transparent !important;
+      background-image: none !important;
       box-shadow: none;
     }
     #lottie canvas {
       display: block;
       width: 100%;
       height: auto;
-      background: transparent;
+      background-color: transparent !important;
+      background-image: none !important;
     }
     p.meta {
       margin: 12px 0 0;
@@ -118,6 +124,11 @@
         });
         anim.addEventListener('DOMLoaded', function () {
           anim.goToAndPlay(0, true);
+          container.style.backgroundColor = 'transparent';
+          var canvases = container.querySelectorAll('canvas');
+          for (var c = 0; c < canvases.length; c++) {
+            canvases[c].style.backgroundColor = 'transparent';
+          }
         });
         anim.addEventListener('destroy', function () {
           blobs.forEach(URL.revokeObjectURL);
