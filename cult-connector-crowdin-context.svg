@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="120" y1="120" x2="1550" y2="880" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF0FF"/>
+      <stop offset="0.55" stop-color="#F8E9F0"/>
+      <stop offset="1" stop-color="#F6F2FF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#6B5CFF"/>
+      <stop offset="1" stop-color="#5454D2"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="shadow" x="-40" y="-40" width="2000" height="1200" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="26" flood-color="#000" flood-opacity="0.16"/>
+    </filter>
+    <filter id="softShadow" x="-40" y="-40" width="2000" height="1200" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(820 450) rotate(90) scale(360 520)">
+      <stop stop-color="#6B5CFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#6B5CFF" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .t-title{font: 800 44px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-sub{font: 600 18px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; opacity:.8}
+      .t-h{font: 800 16px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-ui{font: 650 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-mono{font: 700 12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New";}
+      .t-pill{font: 800 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; letter-spacing:.08em; text-transform: uppercase;}
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <ellipse cx="820" cy="480" rx="520" ry="360" fill="url(#glow)"/>
+
+  <!-- Decorative motion lines -->
+  <g opacity="0.6">
+    <path d="M1220 300h220" stroke="#61D2B4" stroke-width="6" stroke-linecap="round" opacity="0.25"/>
+    <path d="M1150 332h300" stroke="#7B6CF5" stroke-width="6" stroke-linecap="round" opacity="0.22"/>
+    <path d="M210 690h260" stroke="#7B6CF5" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+    <path d="M260 726h180" stroke="#61D2B4" stroke-width="6" stroke-linecap="round" opacity="0.16"/>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(140 96)">
+    <text class="t-title" fill="#0B2A33">Strings &#8594; Crowdin</text>
+    <text y="34" class="t-sub" fill="#0B2A33">with visual context for translators</text>
+  </g>
+
+  <!-- Left: Strings payload card -->
+  <g filter="url(#shadow)">
+    <rect x="160" y="220" width="520" height="560" rx="22" fill="url(#card)" stroke="#E7E6FF"/>
+    <rect x="160" y="220" width="520" height="58" rx="22" fill="#FFFFFF" opacity="0.92"/>
+    <text x="190" y="256" class="t-h" fill="#0B2A33">Strings extracted from After Effects</text>
+    <text x="190" y="282" class="t-ui" fill="#0B2A33" opacity="0.68">Composition: End Card • Locale: English</text>
+
+    <!-- JSON-like list -->
+    <g transform="translate(190 320)">
+      <rect x="0" y="0" width="460" height="420" rx="16" fill="#0F1020" opacity="0.96"/>
+      <text x="20" y="34" class="t-mono" fill="#BFC5FF">{</text>
+      <text x="40" y="62" class="t-mono" fill="#8CE3C9">"items"</text>
+      <text x="94" y="62" class="t-mono" fill="#BFC5FF">: [</text>
+
+      <!-- item rows -->
+      <g transform="translate(0 0)">
+        <text x="60" y="96" class="t-mono" fill="#BFC5FF">{</text>
+        <text x="80" y="120" class="t-mono" fill="#8CE3C9">"id"</text>
+        <text x="118" y="120" class="t-mono" fill="#BFC5FF">: </text>
+        <text x="132" y="120" class="t-mono" fill="#FFD66B">"comp_21__layer_1"</text>
+        <text x="80" y="144" class="t-mono" fill="#8CE3C9">"text"</text>
+        <text x="128" y="144" class="t-mono" fill="#BFC5FF">: </text>
+        <text x="142" y="144" class="t-mono" fill="#E6E7F0">"Fin"</text>
+        <text x="60" y="170" class="t-mono" fill="#BFC5FF">},</text>
+      </g>
+
+      <g transform="translate(0 100)">
+        <text x="60" y="96" class="t-mono" fill="#BFC5FF">{</text>
+        <text x="80" y="120" class="t-mono" fill="#8CE3C9">"id"</text>
+        <text x="118" y="120" class="t-mono" fill="#BFC5FF">: </text>
+        <text x="132" y="120" class="t-mono" fill="#FFD66B">"comp_21__layer_7"</text>
+        <text x="80" y="144" class="t-mono" fill="#8CE3C9">"text"</text>
+        <text x="128" y="144" class="t-mono" fill="#BFC5FF">: </text>
+        <text x="142" y="144" class="t-mono" fill="#E6E7F0">"Distribution"</text>
+        <text x="60" y="170" class="t-mono" fill="#BFC5FF">},</text>
+      </g>
+
+      <g transform="translate(0 200)">
+        <text x="60" y="96" class="t-mono" fill="#BFC5FF">{</text>
+        <text x="80" y="120" class="t-mono" fill="#8CE3C9">"id"</text>
+        <text x="118" y="120" class="t-mono" fill="#BFC5FF">: </text>
+        <text x="132" y="120" class="t-mono" fill="#FFD66B">"comp_21__layer_12"</text>
+        <text x="80" y="144" class="t-mono" fill="#8CE3C9">"text"</text>
+        <text x="128" y="144" class="t-mono" fill="#BFC5FF">: </text>
+        <text x="142" y="144" class="t-mono" fill="#E6E7F0">"End"</text>
+        <text x="60" y="170" class="t-mono" fill="#BFC5FF">}</text>
+      </g>
+
+      <text x="94" y="392" class="t-mono" fill="#BFC5FF">]</text>
+      <text x="20" y="416" class="t-mono" fill="#BFC5FF">}</text>
+    </g>
+  </g>
+
+  <!-- Center arrow: sync to Crowdin -->
+  <g>
+    <path d="M720 486c90 0 140 0 230 0" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M930 486l-22-18v36l22-18z" fill="#5454D2"/>
+    <g transform="translate(742 440)" filter="url(#softShadow)">
+      <rect x="0" y="0" width="162" height="36" rx="18" fill="#FFFFFF" opacity="0.92"/>
+      <rect x="0" y="0" width="162" height="36" rx="18" stroke="#E4E2FF"/>
+      <text x="18" y="24" class="t-pill" fill="#3A2F9B">Sync to Crowdin</text>
+    </g>
+  </g>
+
+  <!-- Right: Crowdin context -->
+  <g filter="url(#shadow)">
+    <rect x="960" y="220" width="480" height="560" rx="22" fill="url(#card)" stroke="#E7E6FF"/>
+    <rect x="960" y="220" width="480" height="58" rx="22" fill="#FFFFFF" opacity="0.92"/>
+    <text x="990" y="256" class="t-h" fill="#0B2A33">Crowdin Editor</text>
+    <text x="990" y="282" class="t-ui" fill="#0B2A33" opacity="0.68">Translations + Visual context</text>
+
+    <!-- Screenshot/context preview -->
+    <g transform="translate(990 320)">
+      <rect x="0" y="0" width="420" height="260" rx="18" fill="#0F1020" opacity="0.96"/>
+      <rect x="18" y="18" width="384" height="224" rx="16" fill="#1A1B2D" stroke="#2B2D4A" opacity="0.95"/>
+
+      <!-- Fake "Fin" card like reference -->
+      <rect x="58" y="54" width="304" height="116" rx="18" fill="#E7D8FF" opacity="0.95"/>
+      <text x="190" y="120" text-anchor="middle" style="font: 800 64px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;" fill="#3B2D7A" opacity="0.95">Fin</text>
+      <rect x="114" y="142" width="192" height="10" rx="5" fill="#7B6CF5" opacity="0.35"/>
+      <rect x="138" y="158" width="144" height="10" rx="5" fill="#61D2B4" opacity="0.28"/>
+
+      <!-- Highlight boxes (visual context) -->
+      <rect x="82" y="76" width="260" height="58" rx="10" fill="#FFEB00" opacity="0.20"/>
+      <rect x="82" y="76" width="260" height="58" rx="10" stroke="#FFEB00" stroke-width="2" opacity="0.65"/>
+
+      <rect x="108" y="186" width="210" height="16" rx="8" fill="#FFEB00" opacity="0.18"/>
+      <rect x="108" y="186" width="210" height="16" rx="8" stroke="#FFEB00" stroke-width="2" opacity="0.55"/>
+
+      <!-- little tag pin -->
+      <circle cx="352" cy="186" r="6" fill="#5454D2" opacity="0.95"/>
+      <path d="M352 192v26" stroke="#5454D2" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+    </g>
+
+    <!-- String list + translation fields -->
+    <g transform="translate(990 604)">
+      <rect x="0" y="0" width="420" height="148" rx="18" fill="#FFFFFF" opacity="0.65" stroke="#E7E6FF"/>
+      <text x="18" y="28" class="t-h" fill="#0B2A33">Strings</text>
+      <g transform="translate(18 44)">
+        <rect x="0" y="0" width="384" height="30" rx="10" fill="#F2F1FF" stroke="#E7E6FF"/>
+        <rect x="10" y="8" width="10" height="10" rx="3" fill="#5454D2" opacity="0.9"/>
+        <text x="28" y="20" class="t-ui" fill="#0B2A33">Fin</text>
+        <rect x="210" y="8" width="170" height="14" rx="7" fill="#E7D8FF" opacity="0.75"/>
+      </g>
+      <g transform="translate(18 84)">
+        <rect x="0" y="0" width="384" height="30" rx="10" fill="#F2F1FF" stroke="#E7E6FF"/>
+        <rect x="10" y="8" width="10" height="10" rx="3" fill="#5454D2" opacity="0.9"/>
+        <text x="28" y="20" class="t-ui" fill="#0B2A33">Distribution</text>
+        <rect x="210" y="8" width="170" height="14" rx="7" fill="#E7D8FF" opacity="0.75"/>
+      </g>
+      <g transform="translate(18 124)">
+        <rect x="0" y="0" width="180" height="12" rx="6" fill="#0B2A33" opacity="0.18"/>
+        <rect x="0" y="18" width="240" height="12" rx="6" fill="#0B2A33" opacity="0.12"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Callout pill -->
+  <g transform="translate(980 178)" filter="url(#softShadow)">
+    <rect x="0" y="0" width="212" height="36" rx="18" fill="#FFFFFF" opacity="0.92"/>
+    <rect x="0" y="0" width="212" height="36" rx="18" stroke="#E4E2FF"/>
+    <text x="18" y="24" class="t-pill" fill="#3A2F9B">Visual Context</text>
+  </g>
+</svg>

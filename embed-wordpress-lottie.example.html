@@ -1,0 +1,41 @@
+<!--
+  WordPress (block editor): add a "Custom HTML" block and paste ONE of the options below.
+  Replace YOUR_JSON_URL with your Media Library file URL (Media → JSON → copy URL).
+
+  INVISIBLE FIX CHECKLIST
+  1) Give the player explicit height OR aspect-ratio (many themes collapse height to 0).
+  2) Open YOUR_JSON_URL in the browser; search for "data:image/png;base64" — if missing,
+     a security / optimizer plugin stripped embedded images (common). Disable optimization for .json
+     or host the raw file elsewhere (S3, GitHub raw).
+  3) Run: node check-lottie-dataurls.mjs path/to/downloaded.json (before upload, file should pass).
+
+  Optional: try cult-connector-sync.json first; if half-quality fails only in WP, use full JSON.
+-->
+
+<!-- Option A — @lottiefiles/lottie-player (widely used) -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"></script>
+<div style="width:100%;max-width:1380px;margin:0 auto;line-height:0;">
+  <lottie-player
+    src="YOUR_JSON_URL"
+    background="transparent"
+    speed="1"
+    loop
+    autoplay
+    mode="normal"
+    style="width:100%;max-width:1380px;height:620px;display:block;"
+  ></lottie-player>
+</div>
+
+<!--
+Option B — DotLottie web component (pin version if unpkg changes break you)
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.js"></script>
+<div style="width:100%;max-width:1380px;margin:0 auto;line-height:0;background:#fff;">
+  <dotlottie-player
+    src="YOUR_JSON_URL"
+    autoplay loop speed="1"
+    mode="normal"
+    background="transparent"
+    style="width:100%;height:620px;display:block;"
+  ></dotlottie-player>
+</div>
+-->

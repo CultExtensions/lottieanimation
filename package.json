@@ -1,0 +1,20 @@
+{
+  "name": "illustrations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:lottie": "node build-cult-connector-sync-lottie.mjs",
+    "build:lottie:half": "node halve-lottie-rasters.mjs cult-connector-sync.json cult-connector-sync-half.json",
+    "build:web": "node build-cult-connector-sync-lottie.mjs && node halve-lottie-rasters.mjs cult-connector-sync.json cult-connector-sync-half.json && node sync-inline-web-lottie.mjs",
+    "build:web:external": "node build-cult-connector-sync-lottie.mjs && node halve-lottie-rasters.mjs cult-connector-sync.json cult-connector-sync-half.json && node externalize-lottie-assets.mjs cult-connector-sync-half.json cult-connector-sync-web",
+    "build:web:full": "node build-cult-connector-sync-lottie.mjs && node externalize-lottie-assets.mjs cult-connector-sync.json cult-connector-sync-web-full"
+  },
+  "dependencies": {
+    "sharp": "^0.34.1"
+  },
+  "devDependencies": {
+    "@xmldom/xmldom": "^0.9.10",
+    "fontkit": "^2.0.4",
+    "lottie-web": "^5.12.2"
+  }
+}
