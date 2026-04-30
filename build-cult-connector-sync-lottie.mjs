@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Builds cult-connector-sync.json from cult-connector-sync.svg:
+ * Builds cult-connector-sync.json from cult-connector-sync.svg (or light variant):
  * - Base: AE label kept; Crowdin row1 muted; rows 2–5 stripped (overlay restores rows + strings)
  * - Row1: strings layer always visible; green stroke/dot layer pulses opacity only (subtle fade)
  * - Rows 2–5 overlay: visible entire timeline (no reveal fade)
@@ -52,7 +52,8 @@ const AE_REV_GLOW_ON_START = 118;
 const AE_REV_GLOW_PEAK = 138;
 const AE_REV_GLOW_OFF_END = 154;
 
-const srcSvgPath = join(dir, 'cult-connector-sync.svg');
+const useLight = process.argv.includes('--light');
+const srcSvgPath = join(dir, useLight ? 'cult-connector-sync-light.svg' : 'cult-connector-sync.svg');
 const outJsonPath = join(dir, 'cult-connector-sync.json');
 
 /** Composition preview card — exact SVG rect x="274" y="124" w="282" h="248" */
@@ -88,18 +89,25 @@ function stripForLottieBase(svg) {
     /<text x="415" y="(?:189|248)"[\s\S]*?>lorem ipsum<\/text>\s*/,
     '',
   );
+  const mutedRowFill = useLight ? '#F3F4F6' : '#161821';
+  // Row 1 (selected) → replace with a neutral pill only (strings overlay layer restores actual text).
   s = s.replace(
-    /<rect x="1010" y="166" width="252" height="30" rx="8" fill="#132018" stroke="#2EA76F" stroke-width="2" \/>\s*\n?\s*<circle cx="1024" cy="182" r="4\.5" fill="#2EA76F" opacity="0\.95" \/>\s*\n?\s*<text x="1036" y="186"[^>]*>lorem ipsum<\/text>\s*\n?\s*<text x="1254" y="186"[^>]*>[\s\S]*?<\/text>/,
-    `    <rect x="1010" y="166" width="252" height="30" rx="8" fill="#161821"/>`,
+    /<rect x="1010" y="166" width="252" height="30" rx="8"[\s\S]*?<text x="1254" y="186"[^>]*>[\s\S]*?<\/text>/,
+    `    <rect x="1010" y="166" width="252" height="30" rx="8" fill="${mutedRowFill}"/>`,
   );
+  // Rows 2–5 → strip regardless of theme colors (match by geometry + y positions).
   s = s.replace(
-    /<rect x="1010" y="204" width="252" height="26" rx="8" fill="#161821" \/>\s*\n?\s*<circle cx="1024" cy="217" r="4\.5" fill="#E85D75" opacity="0\.95" \/>\s*\n?\s*<text x="1036" y="221"[^>]*>lorem ipsum<\/text>\s*\n?\s*<text x="1254" y="221"[^>]*>[\s\S]*?<\/text>\s*\n?\s*<rect x="1010" y="236" width="252" height="26" rx="8" fill="#161821" \/>\s*\n?\s*<circle cx="1024" cy="249" r="4\.5" fill="#E85D75" opacity="0\.95" \/>\s*\n?\s*<text x="1036" y="253"[^>]*>lorem ipsum<\/text>\s*\n?\s*<text x="1254" y="253"[^>]*>[\s\S]*?<\/text>\s*\n?\s*<rect x="1010" y="268" width="252" height="26" rx="8" fill="#161821" \/>\s*\n?\s*<circle cx="1024" cy="281" r="4\.5" fill="#E85D75" opacity="0\.95" \/>\s*\n?\s*<text x="1036" y="285"[^>]*>lorem ipsum<\/text>\s*\n?\s*<text x="1254" y="285"[^>]*>[\s\S]*?<\/text>\s*\n?\s*<rect x="1010" y="300" width="252" height="26" rx="8" fill="#161821" \/>\s*\n?\s*<circle cx="1024" cy="313" r="4\.5" fill="#E85D75" opacity="0\.95" \/>\s*\n?\s*<text x="1036" y="317"[^>]*>lorem ipsum<\/text>\s*\n?\s*<text x="1254" y="317"[^>]*>[\s\S]*?<\/text>/,
+    /<rect x="1010" y="204" width="252" height="26" rx="8"[\s\S]*?<text x="1254" y="317"[^>]*>[\s\S]*?<\/text>\s*/m,
     '',
   );
   return s;
 }
 
 /** Row 1 strings only (green chrome lives on separate pulsing layer). */
+const AE_FLY_TEXT_FILL = useLight ? '#111827' : '#F4F5FC';
+const CROWDIN_ROW_TEXT_PRIMARY = useLight ? '#111827' : '#E6E7F0';
+const CROWDIN_ROW_TEXT_SECONDARY = useLight ? '#374151' : '#B7B9C8';
+const CROWDIN_ROW_BG = useLight ? '#F3F4F6' : '#161821';
 const crowdinRow1StringsSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <defs>
@@ -107,8 +115,8 @@ const crowdinRow1StringsSvg = `<?xml version="1.0" encoding="UTF-8"?>
       .t-ui-sm{font:650 13px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
     </style>
   </defs>
-  <text x="1036" y="186" class="t-ui-sm" fill="#E6E7F0">lorem ipsum</text>
-  <text x="1254" y="186" text-anchor="end" class="t-ui-sm" fill="#C9CBD7">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+  <text x="1036" y="186" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_PRIMARY}">lorem ipsum</text>
+  <text x="1254" y="186" text-anchor="end" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_PRIMARY}">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
 </svg>`;
 
 const crowdinRow1GreenSvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -124,22 +132,22 @@ const crowdinRowsRestOverlaySvg = `<?xml version="1.0" encoding="UTF-8"?>
       .t-ui-sm{font:650 13px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
     </style>
   </defs>
-  <rect x="1010" y="204" width="252" height="26" rx="8" fill="#161821"/>
+  <rect x="1010" y="204" width="252" height="26" rx="8" fill="${CROWDIN_ROW_BG}"/>
   <circle cx="1024" cy="217" r="4.5" fill="#E85D75" opacity="0.95"/>
-  <text x="1036" y="221" class="t-ui-sm" fill="#B7B9C8">lorem ipsum</text>
-  <text x="1254" y="221" text-anchor="end" class="t-ui-sm" fill="#B7B9C8">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
-  <rect x="1010" y="236" width="252" height="26" rx="8" fill="#161821"/>
+  <text x="1036" y="221" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">lorem ipsum</text>
+  <text x="1254" y="221" text-anchor="end" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+  <rect x="1010" y="236" width="252" height="26" rx="8" fill="${CROWDIN_ROW_BG}"/>
   <circle cx="1024" cy="249" r="4.5" fill="#E85D75" opacity="0.95"/>
-  <text x="1036" y="253" class="t-ui-sm" fill="#B7B9C8">lorem ipsum</text>
-  <text x="1254" y="253" text-anchor="end" class="t-ui-sm" fill="#B7B9C8">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
-  <rect x="1010" y="268" width="252" height="26" rx="8" fill="#161821"/>
+  <text x="1036" y="253" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">lorem ipsum</text>
+  <text x="1254" y="253" text-anchor="end" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+  <rect x="1010" y="268" width="252" height="26" rx="8" fill="${CROWDIN_ROW_BG}"/>
   <circle cx="1024" cy="281" r="4.5" fill="#E85D75" opacity="0.95"/>
-  <text x="1036" y="285" class="t-ui-sm" fill="#B7B9C8">lorem ipsum</text>
-  <text x="1254" y="285" text-anchor="end" class="t-ui-sm" fill="#B7B9C8">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
-  <rect x="1010" y="300" width="252" height="26" rx="8" fill="#161821"/>
+  <text x="1036" y="285" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">lorem ipsum</text>
+  <text x="1254" y="285" text-anchor="end" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+  <rect x="1010" y="300" width="252" height="26" rx="8" fill="${CROWDIN_ROW_BG}"/>
   <circle cx="1024" cy="313" r="4.5" fill="#E85D75" opacity="0.95"/>
-  <text x="1036" y="317" class="t-ui-sm" fill="#B7B9C8">lorem ipsum</text>
-  <text x="1254" y="317" text-anchor="end" class="t-ui-sm" fill="#B7B9C8">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+  <text x="1036" y="317" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">lorem ipsum</text>
+  <text x="1254" y="317" text-anchor="end" class="t-ui-sm" fill="${CROWDIN_ROW_TEXT_SECONDARY}">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
 </svg>`;
 
 const arrowsOnlySvg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -155,14 +163,14 @@ const arrowsOnlySvg = `<?xml version="1.0" encoding="UTF-8"?>
 const aeFlyTextFullSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="transparent"/>
-  <text x="${AE_LABEL_CX}" y="${AE_LABEL_CY}" text-anchor="middle" dominant-baseline="central" fill="#F4F5FC"
+  <text x="${AE_LABEL_CX}" y="${AE_LABEL_CY}" text-anchor="middle" dominant-baseline="central" fill="${AE_FLY_TEXT_FILL}"
         style="font:800 26px ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial">lorem ipsum</text>
 </svg>`;
 
 const aeFlyTextCnFullSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="transparent"/>
-  <text x="${AE_LABEL_CX}" y="${AE_LABEL_CY}" text-anchor="middle" dominant-baseline="central" fill="#F4F5FC"
+  <text x="${AE_LABEL_CX}" y="${AE_LABEL_CY}" text-anchor="middle" dominant-baseline="central" fill="${AE_FLY_TEXT_FILL}"
         style="font:800 26px ui-sans-serif,system-ui,-apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif">&#x793A;&#x4F8B;&#x6E90;&#x5B57;&#x7B26;&#x4E32;</text>
 </svg>`;
 

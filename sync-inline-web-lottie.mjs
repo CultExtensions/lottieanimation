@@ -40,4 +40,12 @@ for (const name of fs.readdirSync(outDir)) {
   if (!fs.statSync(src).isFile()) continue;
   fs.copyFileSync(src, join(docsDir, name));
 }
+
+// Also publish the source SVGs for quick review on Pages.
+for (const svgName of ['cult-connector-sync.svg', 'cult-connector-sync-light.svg']) {
+  const src = join(dir, svgName);
+  if (fs.existsSync(src) && fs.statSync(src).isFile()) {
+    fs.copyFileSync(src, join(docsDir, svgName));
+  }
+}
 console.log(`Mirrored ${outDir} → ${docsDir} (for GitHub Pages /docs)`);

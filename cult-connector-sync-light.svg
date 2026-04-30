@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="620" viewBox="0 0 1380 620" fill="none">
+  <defs>
+    <linearGradient id="win" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#F7F8FC" />
+      <stop offset="1" stop-color="#E9ECF6" />
+    </linearGradient>
+    <style>
+      .t-ui{font: 700 15px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-ui-sm{font: 650 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-ui2{font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; opacity:0.92}
+      .t-crumb{font: 600 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+    </style>
+  </defs>
+
+  <!-- After Effects (left): light mock -->
+  <g opacity="0.98">
+    <rect x="40" y="36" width="560" height="548" rx="22" fill="url(#win)" stroke="#D7DBE8" stroke-width="2" />
+    <rect x="40" y="36" width="560" height="52" rx="22" fill="#F3F4F6" />
+    <circle cx="64" cy="62" r="7" fill="#FF6B81" opacity="0.78" />
+    <circle cx="90" cy="62" r="7" fill="#FFD66B" opacity="0.78" />
+    <circle cx="116" cy="62" r="7" fill="#7CFF8A" opacity="0.72" />
+    <rect x="148" y="50" width="240" height="24" rx="12" fill="#E5E7EB" opacity="0.95" />
+    <text x="164" y="68" class="t-ui2" fill="#111827">After Effects</text>
+
+    <!-- Layers column -->
+    <rect x="64" y="104" width="174" height="452" rx="14" fill="#F7F8FC" stroke="#D7DBE8" />
+    <rect x="84" y="124" width="134" height="148" rx="12" fill="#FFFFFF" stroke="#D7DBE8" />
+    <rect x="96" y="146" width="54" height="34" rx="8" fill="#E5E7EB" />
+    <rect x="156" y="146" width="52" height="12" rx="6" fill="#E5E7EB" />
+    <rect x="156" y="164" width="44" height="12" rx="6" fill="#E5E7EB" opacity="0.9" />
+    <rect x="96" y="196" width="110" height="10" rx="5" fill="#CBD5E1" opacity="0.75" />
+    <rect x="96" y="212" width="90" height="10" rx="5" fill="#CBD5E1" opacity="0.65" />
+
+    <text x="84" y="302" class="t-ui2" fill="#111827">Layers</text>
+    <g opacity="0.95">
+      <rect x="84" y="314" width="134" height="12" rx="6" fill="#D1D5DB" />
+      <rect x="84" y="332" width="118" height="12" rx="6" fill="#D1D5DB" opacity="0.9" />
+      <rect x="84" y="350" width="126" height="12" rx="6" fill="#D1D5DB" opacity="0.82" />
+      <rect x="84" y="368" width="122" height="12" rx="6" fill="#D1D5DB" opacity="0.76" />
+      <rect x="84" y="386" width="134" height="12" rx="6" fill="#D1D5DB" opacity="0.7" />
+      <rect x="84" y="404" width="108" height="12" rx="6" fill="#D1D5DB" opacity="0.62" />
+      <rect x="84" y="422" width="126" height="12" rx="6" fill="#D1D5DB" opacity="0.56" />
+      <rect x="84" y="440" width="98" height="10" rx="5" fill="#61D2B4" opacity="0.3" />
+      <rect x="84" y="456" width="86" height="10" rx="5" fill="#7B6CF5" opacity="0.26" />
+    </g>
+
+    <!-- Composition + timeline column -->
+    <rect x="254" y="104" width="322" height="452" rx="16" fill="#F4F6FB" stroke="#D7DBE8" />
+    <rect x="274" y="124" width="282" height="248" rx="14" fill="#FFFFFF" stroke="#D7DBE8" />
+    <g opacity="0.98">
+      <rect x="321" y="167" width="188" height="44" rx="10" fill="#E5E7EB" opacity="0.42" />
+      <rect x="321" y="167" width="188" height="44" rx="10" fill="none" stroke="#7B6CF5" stroke-width="2.5" opacity="0.88" />
+      <rect x="317" y="163" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#7B6CF5" stroke-width="2" />
+      <rect x="503" y="163" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#7B6CF5" stroke-width="2" />
+      <rect x="317" y="205" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#7B6CF5" stroke-width="2" />
+      <rect x="503" y="205" width="10" height="10" rx="2" fill="#FFFFFF" stroke="#7B6CF5" stroke-width="2" />
+      <text x="415" y="189" text-anchor="middle" fill="#374151" opacity="0.95" dominant-baseline="central"
+            style="font: 700 22px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;">lorem ipsum</text>
+    </g>
+    <g transform="translate(415 277)" opacity="0.92">
+      <rect x="-76" y="-54" width="152" height="110" rx="12" fill="#EEF2FF" stroke="#CBD5E1" stroke-width="2" />
+      <circle cx="-46" cy="-26" r="8" fill="#94A3B8" opacity="0.85" />
+      <path d="M-54 30 L-18 -16 L8 8 L24 -14 L54 30 Z" fill="#64748B" opacity="0.9" />
+      <rect x="-58" y="-46" width="38" height="10" rx="3" fill="#7B6CF5" opacity="0.22" />
+    </g>
+
+    <!-- Playhead only in timeline region (below viewer), centered with preview -->
+    <rect x="415" y="406" width="2" height="112" fill="#7B6CF5" opacity="0.52" />
+
+    <text x="274" y="386" class="t-ui2" fill="#111827" opacity="0.88">Timeline</text>
+    <rect x="274" y="396" width="282" height="28" rx="12" fill="#F7F8FC" stroke="#D7DBE8" />
+    <g opacity="0.42">
+      <rect x="294" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="324" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="354" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="384" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="414" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="444" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="474" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="504" y="406" width="1.5" height="6" fill="#6B7280" />
+      <rect x="534" y="406" width="1.5" height="6" fill="#6B7280" />
+    </g>
+    <rect x="296" y="430" width="178" height="14" rx="7" fill="#61D2B4" opacity="0.3" />
+    <rect x="296" y="450" width="236" height="14" rx="7" fill="#7B6CF5" opacity="0.24" />
+    <rect x="296" y="466" width="158" height="14" rx="7" fill="#64748B" opacity="0.18" />
+  </g>
+
+  <!-- Center sync arrows (AE to Crowdin) -->
+  <g transform="translate(659 280)" opacity="0.9">
+    <path d="M0 14 L48 14 L48 6 L62 16 L48 26 L48 18 L0 18 Z" fill="#8F81FF" opacity="0.9" />
+    <path d="M62 42 L14 42 L14 34 L0 44 L14 54 L14 46 L62 46 Z" fill="#8F81FF" opacity="0.78" />
+  </g>
+
+  <!-- Crowdin (right): light mock -->
+  <g opacity="0.98">
+    <rect x="780" y="36" width="560" height="548" rx="22" fill="url(#win)" stroke="#D7DBE8" stroke-width="2" />
+    <rect x="780" y="36" width="560" height="52" rx="22" fill="#F3F4F6" />
+    <circle cx="804" cy="62" r="7" fill="#FF6B81" opacity="0.78" />
+    <circle cx="830" cy="62" r="7" fill="#FFD66B" opacity="0.78" />
+    <circle cx="856" cy="62" r="7" fill="#7CFF8A" opacity="0.72" />
+    <rect x="888" y="50" width="240" height="24" rx="12" fill="#E5E7EB" opacity="0.95" />
+    <text x="904" y="68" class="t-ui2" fill="#111827">Crowdin</text>
+
+    <rect x="804" y="104" width="174" height="452" rx="14" fill="#F7F8FC" stroke="#D7DBE8" />
+    <rect x="824" y="124" width="134" height="148" rx="12" fill="#FFFFFF" stroke="#D7DBE8" />
+    <rect x="836" y="146" width="14" height="10" rx="2" fill="#61D2B4" opacity="0.7" />
+    <text x="856" y="156" class="t-ui-sm" fill="#111827">After Effects</text>
+    <rect x="828" y="166" width="126" height="28" rx="8" fill="#EAF7F1" stroke="#2EA76F" stroke-width="2" />
+    <text x="834" y="184" class="t-ui-sm" fill="#14532D">AE X Crowdin</text>
+    <g opacity="0.95">
+      <rect x="824" y="290" width="134" height="12" rx="6" fill="#D1D5DB" />
+      <rect x="824" y="308" width="118" height="12" rx="6" fill="#D1D5DB" opacity="0.88" />
+      <rect x="824" y="326" width="126" height="12" rx="6" fill="#D1D5DB" opacity="0.78" />
+      <rect x="824" y="344" width="122" height="12" rx="6" fill="#D1D5DB" opacity="0.72" />
+      <rect x="824" y="362" width="134" height="12" rx="6" fill="#D1D5DB" opacity="0.62" />
+      <rect x="824" y="380" width="108" height="12" rx="6" fill="#D1D5DB" opacity="0.52" />
+      <rect x="824" y="398" width="126" height="12" rx="6" fill="#D1D5DB" opacity="0.46" />
+      <rect x="824" y="416" width="98" height="10" rx="5" fill="#61D2B4" opacity="0.22" />
+      <rect x="824" y="432" width="86" height="10" rx="5" fill="#7B6CF5" opacity="0.18" />
+    </g>
+
+    <!-- Editor -->
+    <rect x="994" y="104" width="322" height="452" rx="16" fill="#F4F6FB" stroke="#D7DBE8" />
+    <text x="1010" y="130" class="t-crumb" fill="#6B7280">Cult Translator / Chinese / AE X Crowdin</text>
+
+    <rect x="1010" y="138" width="252" height="24" rx="6" fill="#EEF2FF" />
+    <text x="1022" y="154" class="t-ui2" fill="#111827">Source string</text>
+    <text x="1254" y="154" text-anchor="end" class="t-ui2" fill="#111827">Translation</text>
+
+    <rect x="1010" y="166" width="252" height="30" rx="8" fill="#EAF7F1" stroke="#2EA76F" stroke-width="2" />
+    <circle cx="1024" cy="182" r="4.5" fill="#2EA76F" opacity="0.95" />
+    <text x="1036" y="186" class="t-ui-sm" fill="#14532D">lorem ipsum</text>
+    <text x="1254" y="186" text-anchor="end" class="t-ui-sm" fill="#14532D">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+
+    <rect x="1010" y="204" width="252" height="26" rx="8" fill="#F3F4F6" />
+    <circle cx="1024" cy="217" r="4.5" fill="#E85D75" opacity="0.95" />
+    <text x="1036" y="221" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="1254" y="221" text-anchor="end" class="t-ui-sm" fill="#374151">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+
+    <rect x="1010" y="236" width="252" height="26" rx="8" fill="#F3F4F6" />
+    <circle cx="1024" cy="249" r="4.5" fill="#E85D75" opacity="0.95" />
+    <text x="1036" y="253" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="1254" y="253" text-anchor="end" class="t-ui-sm" fill="#374151">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+
+    <rect x="1010" y="268" width="252" height="26" rx="8" fill="#F3F4F6" />
+    <circle cx="1024" cy="281" r="4.5" fill="#E85D75" opacity="0.95" />
+    <text x="1036" y="285" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="1254" y="285" text-anchor="end" class="t-ui-sm" fill="#374151">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+
+    <rect x="1010" y="300" width="252" height="26" rx="8" fill="#F3F4F6" />
+    <circle cx="1024" cy="313" r="4.5" fill="#E85D75" opacity="0.95" />
+    <text x="1036" y="317" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="1254" y="317" text-anchor="end" class="t-ui-sm" fill="#374151">&#32599;&#21202;&#22982;&#183;&#20234;&#26222;&#26862;</text>
+
+    <text x="1010" y="354" class="t-ui2" fill="#111827">Context</text>
+    <rect x="1010" y="362" width="252" height="178" rx="12" fill="#FFFFFF" stroke="#D7DBE8" />
+    <rect x="1024" y="376" width="108" height="20" rx="6" fill="#EEF2FF" stroke="#CBD5E1" />
+    <text x="1034" y="390" class="t-crumb" fill="#6B7280">string</text>
+    <rect x="1142" y="376" width="92" height="20" rx="6" fill="#EEF2FF" stroke="#CBD5E1" />
+    <text x="1152" y="390" class="t-crumb" fill="#6B7280">Context</text>
+
+    <g transform="translate(1136 478)" opacity="0.92">
+      <rect x="-76" y="-54" width="152" height="110" rx="12" fill="#EEF2FF" stroke="#CBD5E1" stroke-width="2" />
+      <circle cx="-46" cy="-26" r="8" fill="#94A3B8" opacity="0.85" />
+      <path d="M-54 30 L-18 -16 L8 8 L24 -14 L54 30 Z" fill="#64748B" opacity="0.9" />
+      <rect x="-58" y="-46" width="38" height="10" rx="3" fill="#7B6CF5" opacity="0.22" />
+    </g>
+
+    <!-- Tools strip -->
+    <g opacity="0.7">
+      <rect x="1268" y="156" width="26" height="384" rx="10" fill="#EEF2FF" stroke="#CBD5E1" />
+      <circle cx="1281" cy="182" r="6" fill="#7B6CF5" opacity="0.55" />
+      <circle cx="1281" cy="218" r="6" fill="#61D2B4" opacity="0.45" />
+      <circle cx="1281" cy="254" r="6" fill="#64748B" opacity="0.35" />
+      <circle cx="1281" cy="290" r="6" fill="#64748B" opacity="0.3" />
+      <circle cx="1281" cy="326" r="6" fill="#64748B" opacity="0.28" />
+      <circle cx="1281" cy="362" r="6" fill="#64748B" opacity="0.26" />
+      <circle cx="1281" cy="398" r="6" fill="#64748B" opacity="0.24" />
+    </g>
+  </g>
+
+</svg>

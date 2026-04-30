@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "build:lottie": "node build-cult-connector-sync-lottie.mjs",
+    "build:lottie:light": "node build-cult-connector-sync-lottie.mjs --light",
     "build:lottie:half": "node halve-lottie-rasters.mjs cult-connector-sync.json cult-connector-sync-half.json",
-    "build:web": "node build-cult-connector-sync-lottie.mjs && node sync-inline-web-lottie.mjs",
+    "build:web": "node build-cult-connector-sync-lottie.mjs --light && node sync-inline-web-lottie.mjs",
+    "build:web:dark": "node build-cult-connector-sync-lottie.mjs && node sync-inline-web-lottie.mjs",
     "build:web:half": "node build-cult-connector-sync-lottie.mjs && node halve-lottie-rasters.mjs cult-connector-sync.json cult-connector-sync-half.json && node sync-inline-web-lottie.mjs --half",
     "build:web:external": "node build-cult-connector-sync-lottie.mjs && node halve-lottie-rasters.mjs cult-connector-sync.json cult-connector-sync-half.json && node externalize-lottie-assets.mjs cult-connector-sync-half.json cult-connector-sync-web",
     "build:web:full": "node build-cult-connector-sync-lottie.mjs && node externalize-lottie-assets.mjs cult-connector-sync.json cult-connector-sync-web-full"

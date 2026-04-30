@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1221.00" height="668.00" viewBox="225.00 195.00 1221.00 668.00" fill="none">
+  <defs>
+    <linearGradient id="aeWin" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#F7F8FC" />
+      <stop offset="1" stop-color="#E9ECF6" />
+    </linearGradient>
+    
+    <style>
+      .t-ui{font: 700 15px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-ui-sm{font: 650 13px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+      .t-ui2{font: 600 14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; opacity:.9}
+      .t-crumb{font: 600 12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;}
+    </style>
+  </defs>
+
+  <g>
+    <rect x="240" y="210" width="1120" height="600" rx="26" fill="url(#aeWin)" stroke="#D7DBE8" stroke-width="2" />
+
+    <rect x="240" y="210" width="1120" height="52" rx="26" fill="#F3F4F6" />
+    <circle cx="278" cy="236" r="7" fill="#FF6B81" opacity="0.85" />
+    <circle cx="302" cy="236" r="7" fill="#FFD66B" opacity="0.85" />
+    <circle cx="326" cy="236" r="7" fill="#7CFF8A" opacity="0.8" />
+    <rect x="372" y="224" width="240" height="24" rx="12" fill="#F7F8FC" opacity="0.75" />
+    <text x="388" y="242" class="t-ui2" fill="#111827">Crowdin</text>
+  </g>
+
+  <!-- Left: project / files -->
+  <g opacity="0.95">
+    <rect x="270" y="286" width="320" height="494" rx="16" fill="#F7F8FC" stroke="#D7DBE8" />
+
+    <rect x="292" y="310" width="276" height="168" rx="14" fill="#FFFFFF" stroke="#D7DBE8" />
+    <rect x="316" y="332" width="14" height="10" rx="2" fill="#61D2B4" opacity="0.85" />
+    <text x="336" y="342" class="t-ui-sm" fill="#111827">After Effects</text>
+    <rect x="308" y="352" width="244" height="28" rx="8" fill="#EAF7F1" stroke="#2EA76F" stroke-width="2" />
+    <!-- Removed left selection strip -->
+    <text x="318" y="370" class="t-ui-sm" fill="#111827">AE X Crowdin</text>
+    
+
+    <rect x="316" y="388" width="14" height="10" rx="2" fill="#61D2B4" opacity="0.45" />
+    <text x="336" y="398" class="t-ui-sm" fill="#6B7280">AE X Crowdin2</text>
+
+    <rect x="316" y="418" width="14" height="10" rx="2" fill="#7B6CF5" opacity="0.55" />
+    <text x="336" y="428" class="t-ui-sm" fill="#6B7280">Canva</text>
+
+    <g opacity="0.85">
+      <rect x="292" y="536" width="276" height="12" rx="6" fill="#D1D5DB" />
+      <rect x="292" y="556" width="240" height="12" rx="6" fill="#D1D5DB" opacity="0.85" />
+      <rect x="292" y="576" width="262" height="12" rx="6" fill="#D1D5DB" opacity="0.75" />
+      <rect x="292" y="604" width="252" height="12" rx="6" fill="#D1D5DB" opacity="0.7" />
+      <rect x="292" y="626" width="276" height="12" rx="6" fill="#D1D5DB" opacity="0.62" />
+      <rect x="292" y="648" width="220" height="12" rx="6" fill="#D1D5DB" opacity="0.55" />
+      <rect x="292" y="670" width="246" height="12" rx="6" fill="#D1D5DB" opacity="0.48" />
+      <rect x="292" y="692" width="276" height="12" rx="6" fill="#D1D5DB" opacity="0.42" />
+      <rect x="292" y="716" width="210" height="10" rx="5" fill="#61D2B4" opacity="0.22" />
+      <rect x="292" y="734" width="170" height="10" rx="5" fill="#7B6CF5" opacity="0.18" />
+    </g>
+  </g>
+
+  <!-- Main editor: strings on top, Context below (no Cult Connector panel) -->
+  <g opacity="0.95">
+    <rect x="612" y="286" width="736" height="494" rx="18" fill="#F4F6FB" stroke="#D7DBE8" />
+
+    <text x="628" y="314" class="t-crumb" fill="#6B7280">Cult Translator / Chinese / AE X Crowdin</text>
+
+    <rect x="628" y="324" width="696" height="26" rx="6" fill="#EEF2FF" />
+    <text x="640" y="342" class="t-ui2" fill="#111827">Source string</text>
+    <text x="988" y="342" class="t-ui2" fill="#111827">Translation</text>
+
+    <!-- Selected row -->
+    <rect x="628" y="356" width="696" height="34" rx="8" fill="#EAF7F1" stroke="#2EA76F" stroke-width="2" />
+    <!-- Removed left selection strip (keep row highlight via stroke) -->
+    <text x="642" y="378" class="t-ui" fill="#111827">lorem ipsum</text>
+    <text x="988" y="378" class="t-ui" fill="#111827">罗勒姆·伊普森</text>
+
+    <!-- Other rows -->
+    <rect x="628" y="396" width="696" height="30" rx="8" fill="#F3F4F6" />
+    <circle cx="646" cy="411" r="5" fill="#E85D75" opacity="0.95" />
+    <text x="662" y="416" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="988" y="416" class="t-ui-sm" fill="#374151">罗勒姆·伊普森</text>
+
+    <rect x="628" y="432" width="696" height="30" rx="8" fill="#F3F4F6" />
+    <circle cx="646" cy="447" r="5" fill="#E85D75" opacity="0.95" />
+    <text x="662" y="452" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="988" y="452" class="t-ui-sm" fill="#374151">罗勒姆·伊普森</text>
+
+    <rect x="628" y="468" width="696" height="30" rx="8" fill="#F3F4F6" />
+    <circle cx="646" cy="483" r="5" fill="#E85D75" opacity="0.95" />
+    <text x="662" y="488" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="988" y="488" class="t-ui-sm" fill="#374151">罗勒姆·伊普森</text>
+
+    <rect x="628" y="504" width="696" height="30" rx="8" fill="#F3F4F6" />
+    <circle cx="646" cy="519" r="5" fill="#E85D75" opacity="0.95" />
+    <text x="662" y="524" class="t-ui-sm" fill="#374151">lorem ipsum</text>
+    <text x="988" y="524" class="t-ui-sm" fill="#374151">罗勒姆·伊普森</text>
+
+    <!-- Context section (below strings) -->
+    <text x="628" y="556" class="t-ui2" fill="#111827">Context</text>
+    <rect x="628" y="564" width="696" height="192" rx="14" fill="#FFFFFF" stroke="#D7DBE8" />
+
+    <!-- Chips like Crowdin -->
+    <rect x="642" y="578" width="120" height="22" rx="6" fill="#EEF2FF" stroke="#CBD5E1" />
+    <text x="652" y="593" class="t-crumb" fill="#6B7280">string</text>
+    <rect x="772" y="578" width="96" height="22" rx="6" fill="#EEF2FF" stroke="#CBD5E1" />
+    <text x="782" y="593" class="t-crumb" fill="#6B7280">Context</text>
+
+    <!-- Image-placeholder icon centered -->
+    <g transform="translate(976 660)" opacity="0.92">
+      <rect x="-72" y="-52" width="144" height="104" rx="12" fill="#1B2436" stroke="#CBD5E1" stroke-width="2" />
+      <circle cx="-44" cy="-26" r="8" fill="#94A3B8" opacity="0.9" />
+      <path d="M-52 28 L-18 -18 L6 6 L22 -14 L52 28 Z" fill="#64748B" opacity="0.95" />
+      <rect x="-56" y="-46" width="36" height="10" rx="3" fill="#7B6CF5" opacity="0.35" />
+    </g>
+
+    <!-- Slim Crowdin tool strip (TM / glossary / etc.) -->
+    <g opacity="0.85">
+      <rect x="1318" y="356" width="26" height="348" rx="10" fill="#EEF2FF" stroke="#CBD5E1" />
+      <circle cx="1331" cy="382" r="6" fill="#7B6CF5" opacity="0.55" />
+      <circle cx="1331" cy="418" r="6" fill="#61D2B4" opacity="0.45" />
+      <circle cx="1331" cy="454" r="6" fill="#374151" opacity="0.4" />
+      <circle cx="1331" cy="490" r="6" fill="#374151" opacity="0.35" />
+      <circle cx="1331" cy="526" r="6" fill="#374151" opacity="0.3" />
+      <circle cx="1331" cy="562" r="6" fill="#374151" opacity="0.28" />
+    </g>
+  </g>
+</svg>
